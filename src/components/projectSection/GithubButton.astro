@@ -1,0 +1,44 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  repo: string;
+}
+
+const { repo } = Astro.props;
+const href = `https://github.com/alex-popov-tech/${repo}`;
+---
+
+<a href={href}>
+<button>
+  <Icon name="github" width={32} height={32} />
+  <span>Repository</span>
+</button>
+</a>
+
+<style>
+button {
+  background-color: black;
+  color: white;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-evenly;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #30363D;
+  border-radius: 6px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 16rem;
+}
+span {
+  font-size: 2rem;
+  line-height: 2.25rem;
+}
+a {
+  text-decoration-line: none;
+}
+</style>
+
+

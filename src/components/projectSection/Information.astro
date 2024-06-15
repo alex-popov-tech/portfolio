@@ -1,0 +1,64 @@
+---
+import Tool from "./Tool.astro";
+import GithubButton from "./GithubButton.astro";
+import LiveButton from "./LiveButton.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  repo: string;
+  live: string;
+  stack: {iconName: string; text: string, href: string; width?: number; height?: number}[];
+}
+
+const { title, description, stack, repo, live } = Astro.props;
+---
+
+<div class="container">
+  <h1>{title}</h1>
+  <span>{description}</span>
+  <div class={stack.length < 4 ? "stack-small" : "stack"}>
+    {stack.map((it) => (
+      <Tool text={it.text} href={it.href} iconName={it.iconName} width={it.width} height={it.height}/>
+    ))}
+  </div>
+  <div class="actions">
+    <GithubButton repo={repo} />
+    {!!live?.length && <LiveButton live={live} />}
+  </div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+  h1 {
+    color: #fff;
+    font-size: 4rem;
+    line-height: 1;
+    text-align: center;;
+  }
+  span {
+    color: #fff;
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+  .stack {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-evenly;
+    gap: 2rem;
+  }
+  .stack-small {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+  }
+  .actions {
+    display: flex;
+    justify-content: space-evenly;
+  }
+</style>

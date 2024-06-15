@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  live: string;
+}
+
+const { live } = Astro.props;
+---
+
+<a href={live}>
+<button>
+  <Icon name="party" width={32} height={32} />
+  <span>L I V E</span>
+</button>
+</a>
+
+<style>
+button {
+  background: linear-gradient(135deg, #3366ff, #ff6f61, #33cc33, #ffcc00);
+  background-size: 400% 400%;
+  outline: none;
+  transition: background-position 1s ease;
+  &:hover {
+    background-position: 100% 0;
+  }
+  color: white;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-evenly;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 16rem;
+}
+span {
+  font-size: 2rem;
+  line-height: 2.25rem;
+}
+a {
+  text-decoration-line: none;
+}
+</style>
+
+

@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  text: string;
+  href: string;
+  iconName: string;
+  width?: number;
+  height?: number;
+}
+
+const { text, href, iconName, width = 32, height = 32 } = Astro.props;
+---
+<span>
+  <Icon name={iconName} width={width} height={height} />
+  <a href={href}>{text}</a>
+</span>
+
+<style>
+span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+a {
+  color: #fff;
+  text-decoration-line: none;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  &:hover {
+    text-decoration-line: underline;
+  }
+}
+</style>
+

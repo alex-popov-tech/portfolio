@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectSection from "../components/projectSection/index.astro";
+import { sections } from "../data.astro";
+---
+
+<Layout
+  title="Oleksandr's Portfolio"
+  description="Portfolio and Pet projects of Oleksandr Popov"
+>
+  <main>
+    {sections.map((it, i) => (
+      <ProjectSection
+        side={i % 2 === 0 ? "left" : "right"}
+        title={it.title}
+        description={it.description}
+        stack={it.stack}
+        repo={it.repo}
+        live={it.live}
+        herosrc={it.herosrc}
+    />
+    ))}
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: grid;
+    grid-auto-rows: minmax(100vh, auto);
+    grid-template-columns: 1fr;
+    place-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    height: 100vh;
+  }
+</style>

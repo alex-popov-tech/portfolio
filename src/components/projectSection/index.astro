@@ -1,0 +1,66 @@
+---
+import Information from "./Information.astro";
+import Hero from "./Hero.astro";
+
+interface Props {
+  title: string;
+  herosrc: ImageMetadata;
+  repo: string;
+  live: string;
+  side: "left" | "right";
+  description: string;
+  stack: {iconName: string; text: string, href: string; width?: number; height?: number}[];
+}
+
+const { herosrc, repo, live, side, title, description, stack } = Astro.props;
+
+---
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      entry.target.classList.remove("hide");
+    }
+  });
+});
+
+document.querySelectorAll("section").forEach((it) => { observer.observe(it); });
+</script>
+
+<section class={ `hide ${side}` }>
+  {side === "left" && <Hero herosrc={herosrc} live={live} />}
+  {side === "right" && <Information repo={repo} live={live} title={title} description={description} stack={stack} />}
+  {side === "left" && <Information repo={repo} live={live} title={title} description={description} stack={stack} />}
+  {side === "right" && <Hero herosrc={herosrc} live={live} />}
+</section>
+
+<style>
+  section {
+    height: 100vh;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    transition: all 1.5s ease-in-out;
+    scroll-snap-align: start;
+    overflow-x: hidden;
+    align-items: center;
+  }
+  .hide {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  .left {
+    transform: translateX(-90%);
+  }
+  .right {
+    transform: translateX(90%);
+  }
+  .show {
+    opacity:1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+</style>
+

@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  herosrc: ImageMetadata;
+  live: string;
+}
+const { herosrc, live } = Astro.props;
+---
+<a href={live} class="hero">
+    <Image src={herosrc} alt="Project Hero" width="960" height="540" />
+</a>
+
+<style>
+.hero {
+  display: grid;
+  place-items: center;
+  height: fit-content;
+}
+img {
+  width: 100%
+  height: auto;
+  border-radius: 1rem;
+}
+</style>
