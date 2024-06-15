@@ -38,15 +38,29 @@ document.querySelectorAll("section").forEach((it) => { observer.observe(it); });
 <style>
   section {
     height: 100vh;
-    padding: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    transition: all 1.5s ease-in-out;
-    scroll-snap-align: start;
-    overflow-x: hidden;
+    padding-inline: 2rem;
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 2rem;
+
+    transition: all 1.5s ease-in-out;
+    overflow-x: hidden;
+
+    scroll-snap-align: start;
+
+    @media (min-width: 320px) {
+      padding-block: 2.25rem;
+    }
+    @media (min-width: 640px) {
+      padding-block: 3.75rem;
+    }
+    @media (min-width: 1024px) {
+      padding-block: 5.75rem;
+    }
   }
+
   .hide {
     opacity: 0;
     filter: blur(10px);
