@@ -1,6 +1,6 @@
 ---
-import Information from "./Information.astro";
-import Hero from "./Hero.astro";
+import Title from "./Title.astro";
+import Body from "./Body.astro";
 
 interface Props {
   title: string;
@@ -13,7 +13,6 @@ interface Props {
 }
 
 const { herosrc, repo, live, side, title, description, stack } = Astro.props;
-
 ---
 <script>
 const observer = new IntersectionObserver((entries) => {
@@ -28,22 +27,19 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll("section").forEach((it) => { observer.observe(it); });
 </script>
 
-<section class={ `hide ${side}` }>
-  {side === "left" && <Hero herosrc={herosrc} live={live} />}
-  {side === "right" && <Information repo={repo} live={live} title={title} description={description} stack={stack} />}
-  {side === "left" && <Information repo={repo} live={live} title={title} description={description} stack={stack} />}
-  {side === "right" && <Hero herosrc={herosrc} live={live} />}
+<section class={`hide ${side}`}>
+  <Title title={title} />
+  <Body side={side} herosrc={herosrc} repo={repo} live={live} title={title} description={description} stack={stack} />
 </section>
 
 <style>
   section {
     height: 100vh;
-    padding-inline: 2rem;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
 
     transition: all 1.5s ease-in-out;
     overflow-x: hidden;
@@ -51,13 +47,19 @@ document.querySelectorAll("section").forEach((it) => { observer.observe(it); });
     scroll-snap-align: start;
 
     @media (min-width: 320px) {
-      padding-block: 2.25rem;
+      gap: 1rem;
+      padding: 1rem;
+      padding-bottom: 3rem;
     }
     @media (min-width: 640px) {
-      padding-block: 3.75rem;
+      gap: 2rem;
+      padding: 1rem;
+      padding-bottom: 4rem;
     }
     @media (min-width: 1024px) {
-      padding-block: 5.75rem;
+      gap: 1rem;
+      padding-inline: 3rem;
+      padding-block: 3.5rem;
     }
   }
 

@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { repo } = Astro.props;
-const href = `https://github.com/alex-popov-tech/${repo}`;
+const href = `https://github.com/${repo}`;
 ---
 
 <a href={href}>
@@ -23,21 +23,49 @@ button {
   display: flex;
   gap: 2rem;
   justify-content: space-evenly;
-  padding: 10px 20px;
+  align-items: center;
   cursor: pointer;
   border-width: 2px;
   border-style: solid;
   border-color: #30363D;
   border-radius: 6px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-  width: 16rem;
+
+  @media (min-width: 320px) {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+  @media (min-width: 640px) {
+    width: 100%;
+    padding: 1.5rem 2rem;
+  }
 }
 span {
-  font-size: 2rem;
-  line-height: 2.25rem;
+  @media (min-width: 340px) {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  @media (min-width: 640px) {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
+
 a {
   text-decoration-line: none;
+  width: 100%;
+  height: fit-content;
+}
+
+svg {
+  @media (min-width: 320px) {
+    width: 32px;
+    height: 32px;
+  }
+  @media (min-width: 640px) {
+    width: 42px;
+    height: 42px;
+  }
 }
 </style>
 

@@ -7,18 +7,26 @@ interface Props {
 }
 const { herosrc, live } = Astro.props;
 ---
-<a href={live} class="hero">
-    <Image src={herosrc} alt="Project Hero" width="960" height="540" />
-</a>
+<div class="hero">
+  <a href={live}>
+    <Image src={herosrc} alt="Project Scheenshot" width="1980" height="1080" />
+  </a>
+</div>
 
 <style>
 .hero {
   display: grid;
   place-items: center;
+  width: 100%;
+}
+a {
+  width: 100%;
   height: fit-content;
+  display: grid;
+  place-items: center;
 }
 img {
-  width: 100%
+  width: 100%;
   height: auto;
   border-radius: 1rem;
 }

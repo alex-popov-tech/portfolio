@@ -11,23 +11,49 @@ interface Props {
 
 const { text, href, iconName, width = 32, height = 32 } = Astro.props;
 ---
-<span>
+<a href={href}>
   <Icon name={iconName} width={width} height={height} />
-  <a href={href}>{text}</a>
-</span>
+  <span>{text}</span>
+</a>
 
 <style>
-span {
+a {
+  text-decoration-line: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+
+  @media (min-width: 320px) {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
 }
-a {
+
+svg {
+  @media (min-width: 320px) {
+    height: 16px;
+    width: 16px;
+  }
+  @media (min-width: 640px) {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+span {
   color: #fff;
   text-decoration-line: none;
-  font-size: 2rem;
-  line-height: 2.25rem;
   &:hover {
     text-decoration-line: underline;
   }
