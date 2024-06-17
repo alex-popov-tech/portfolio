@@ -4,6 +4,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://portfolio.sashapopov.com",
+  site: "https://alex-popov-tech.github.io",
+  base: "portfolio",
   integrations: [icon()],
 });
