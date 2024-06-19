@@ -9,37 +9,52 @@ interface Props {
   live: string;
   side: "left" | "right";
   description: string;
-  stack: {iconName: string; text: string, href: string; width?: number; height?: number}[];
+  stack: {
+    iconName: string;
+    text: string;
+    href: string;
+    width?: number;
+    height?: number;
+  }[];
 }
 
 const { herosrc, repo, live, side, title, description, stack } = Astro.props;
 ---
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      entry.target.classList.remove("hide");
-    }
-  });
-});
 
-document.querySelectorAll("section").forEach((it) => { observer.observe(it); });
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          entry.target.classList.remove("hide");
+        }
+      });
+    },
+    { threshold: 0.01 },
+  );
+
+  document.querySelectorAll("section").forEach((it) => {
+    observer.observe(it);
+  });
 </script>
 
 <section class={`hide ${side}`}>
   <Title title={title} />
-  <Body side={side} herosrc={herosrc} repo={repo} live={live} title={title} description={description} stack={stack} />
+  <Body
+    herosrc={herosrc}
+    repo={repo}
+    live={live}
+    title={title}
+    description={description}
+    stack={stack}
+  />
 </section>
 
 <style>
   section {
-    height: 100vh;
-    width: 100%;
-
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     transition: all 1.5s ease-in-out;
     overflow-x: hidden;
@@ -47,19 +62,17 @@ document.querySelectorAll("section").forEach((it) => { observer.observe(it); });
     scroll-snap-align: start;
 
     @media (min-width: 320px) {
-      gap: 1rem;
+      gap: 0.5rem;
       padding: 1rem;
       padding-bottom: 3rem;
     }
     @media (min-width: 640px) {
       gap: 2rem;
       padding: 1rem;
-      padding-bottom: 4rem;
     }
     @media (min-width: 1024px) {
       gap: 1rem;
-      padding-inline: 3rem;
-      padding-block: 3.5rem;
+      padding: 2rem;
     }
   }
 
@@ -74,9 +87,8 @@ document.querySelectorAll("section").forEach((it) => { observer.observe(it); });
     transform: translateX(90%);
   }
   .show {
-    opacity:1;
+    opacity: 1;
     filter: blur(0);
     transform: translateX(0);
   }
 </style>
-

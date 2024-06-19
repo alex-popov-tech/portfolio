@@ -9,29 +9,25 @@ const { title } = Astro.props;
 <span>{title}</span>
 
 <style>
-span {
-  margin: 0;
-  color: #fff;
-  text-align: center;
+  span {
+    margin: 0;
+    color: #fff;
+    text-align: center;
 
-  height: fit-content;
-  line-height: 1;
+    height: fit-content;
+    line-height: 1;
 
-  @media (min-width: 320px) {
-    font-size: 2.25em;
-    line-height: 2.5rem;
+    @media (min-width: 320px) {
+      font-size: 2.25em;
+      line-height: 2.5rem;
+    }
+    @media (min-width: 640px) {
+      font-size: 4rem;
+      line-height: 1;
+    }
+    @media (min-width: 1024px) {
+      font-size: 5.5rem;
+      line-height: 1;
+    }
   }
-  @media (min-width: 640px) {
-    font-size: 4rem;
-    line-height: 1;
-  }
-  @media (min-width: 1024px) {
-    font-size: 6rem;
-    line-height: 1;
-  }
-  @media (min-width: 1280px) {
-    font-size: 7.5rem;
-    line-height: 1;
-  }
-}
 </style>

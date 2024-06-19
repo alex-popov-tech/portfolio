@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
 
 interface Props {
   text: string;
@@ -11,52 +11,55 @@ interface Props {
 
 const { text, href, iconName, width = 32, height = 32 } = Astro.props;
 ---
+
 <a href={href}>
   <Icon name={iconName} width={width} height={height} />
   <span>{text}</span>
 </a>
 
 <style>
-a {
-  text-decoration-line: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  width: fit-content;
-  height: fit-content;
+  a {
+    text-decoration-line: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+  }
 
-  @media (min-width: 320px) {
-    font-size: 1rem;
-    line-height: 1.25rem;
+  svg {
+    @media (min-width: 320px) {
+      height: 16px;
+      width: 16px;
+    }
+    @media (min-width: 640px) {
+      height: 30px;
+      width: 30px;
+    }
+    @media (min-width: 1024px) {
+      height: 25px;
+      width: 25px;
+    }
   }
-  @media (min-width: 640px) {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
-  }
-  @media (min-width: 1024px) {
-    font-size: 2.5rem;
-    line-height: 1;
-  }
-}
 
-svg {
-  @media (min-width: 320px) {
-    height: 16px;
-    width: 16px;
+  span {
+    color: #fff;
+    text-decoration-line: none;
+    &:hover {
+      text-decoration-line: underline;
+    }
+    @media (min-width: 320px) {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+    }
+    @media (min-width: 1024px) {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
   }
-  @media (min-width: 640px) {
-    height: 30px;
-    width: 30px;
-  }
-}
-
-span {
-  color: #fff;
-  text-decoration-line: none;
-  &:hover {
-    text-decoration-line: underline;
-  }
-}
 </style>
-

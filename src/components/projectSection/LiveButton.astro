@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
 
 interface Props {
   live: string;
@@ -9,74 +9,72 @@ const { live } = Astro.props;
 ---
 
 <a href={live}>
-<button>
-  <Icon name="party" width={32} height={32} />
-  <span>L I V E</span>
-</button>
+  <button>
+    <Icon name="party" width={32} height={32} />
+    <span>L I V E</span>
+  </button>
 </a>
 
 <style>
-button {
-  width: 100%;
-  background: linear-gradient(135deg, #3366ff, #ff6f61, #33cc33, #ffcc00);
-  background-size: 400% 400%;
-  outline: none;
-  transition: background-position 1s ease;
-  &:hover {
-    background-position: 100% 0;
-  }
-  color: white;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 2rem;
-  padding: 10px 20px;
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  button {
+    width: 100%;
+    background: linear-gradient(135deg, #3366ff, #ff6f61, #33cc33, #ffcc00);
+    background-size: 400% 400%;
+    outline: none;
+    transition: background-position 1s ease;
+    &:hover {
+      background-position: 100% 0;
+    }
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 
-  @media (min-width: 320px) {
-    padding: 1rem 2rem;
+    @media (min-width: 320px) {
+      padding: 1rem 2rem;
+    }
+    @media (min-width: 640px) {
+      padding: 1.5rem 2rem;
+    }
   }
-  @media (min-width: 640px) {
-    padding: 1.5rem 2rem;
-  }
-}
 
-span {
-  @media (min-width: 340px) {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+  span {
+    @media (min-width: 340px) {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+    @media (min-width: 640px) {
+      font-size: 3rem;
+      line-height: 1;
+    }
   }
-  @media (min-width: 640px) {
-    font-size: 3rem;
-    line-height: 1;
-  }
-}
 
-a {
-  text-decoration-line: none;
-  width: 100%;
-  height: fit-content;
-  @media (min-width: 340px) {
-    display: none;
+  a {
+    text-decoration-line: none;
+    width: 100%;
+    height: fit-content;
+    @media (min-width: 340px) {
+      display: none;
+    }
+    @media (min-width: 640px) {
+      display: inline;
+    }
   }
-  @media (min-width: 640px) {
-    display: inline;
-  }
-}
 
-svg {
-  @media (min-width: 320px) {
-    width: 32px;
-    height: 32px;
+  svg {
+    @media (min-width: 320px) {
+      width: 32px;
+      height: 32px;
+    }
+    @media (min-width: 640px) {
+      width: 42px;
+      height: 42px;
+    }
   }
-  @media (min-width: 640px) {
-    width: 42px;
-    height: 42px;
-  }
-}
 </style>
-
-

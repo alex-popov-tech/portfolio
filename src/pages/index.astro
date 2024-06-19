@@ -9,17 +9,19 @@ import { sections } from "../data.astro";
   description="Portfolio and Pet projects of Oleksandr Popov"
 >
   <main>
-    {sections.map((it, i) => (
-      <ProjectSection
-        side={i % 2 === 0 ? "left" : "right"}
-        title={it.title}
-        description={it.description}
-        stack={it.stack}
-        repo={it.repo}
-        live={it.live}
-        herosrc={it.herosrc}
-    />
-    ))}
+    {
+      sections.map((it, i) => (
+        <ProjectSection
+          side={i % 2 === 0 ? "left" : "right"}
+          title={it.title}
+          description={it.description}
+          stack={it.stack}
+          repo={it.repo}
+          live={it.live}
+          herosrc={it.herosrc}
+        />
+      ))
+    }
   </main>
 </Layout>
 
@@ -28,7 +30,6 @@ import { sections } from "../data.astro";
     display: grid;
     grid-auto-rows: minmax(100vh, auto);
     grid-template-columns: 1fr;
-    place-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
