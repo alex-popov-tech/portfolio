@@ -56,7 +56,7 @@ const { herosrc, repo, live, description, stack } = Astro.props;
     @media (min-width: 640px) {
       gap: 2rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       display: grid;
       grid-template-columns: 6fr 4fr;
       grid-template-rows: 1fr max-content;
@@ -77,7 +77,7 @@ const { herosrc, repo, live, description, stack } = Astro.props;
     @media (min-width: 640px) {
       gap: 2rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       padding: 0;
       gap: 2rem;
       justify-content: space-evenly;
@@ -99,9 +99,13 @@ const { herosrc, repo, live, description, stack } = Astro.props;
       font-size: 1.25rem;
       line-height: 1.25rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       font-size: 1.25rem;
       line-height: 1.55rem;
+    }
+    @media (min-width: 1920px) {
+      font-size: 2rem;
+      line-height: 2.25rem;
     }
   }
 
@@ -117,7 +121,7 @@ const { herosrc, repo, live, description, stack } = Astro.props;
       grid-template-columns: repeat(4, 1fr);
       gap: 0.75rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       grid-template-columns: repeat(3, 1fr);
       gap: 0.75rem;
     }

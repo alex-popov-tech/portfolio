@@ -52,6 +52,9 @@ const { herosrc, repo, live, side, title, description, stack } = Astro.props;
 
 <style>
   section {
+    height: fit-content;
+    max-width: 1920px;
+
     display: flex;
     flex-direction: column;
 
@@ -69,7 +72,7 @@ const { herosrc, repo, live, side, title, description, stack } = Astro.props;
       gap: 2rem;
       padding: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       gap: 1rem;
       padding: 2rem;
     }
