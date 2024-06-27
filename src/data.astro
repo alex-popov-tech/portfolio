@@ -152,6 +152,16 @@ export const t = {
     text: "Vite",
     href: "https://vitejs.dev/",
   },
+  selenium: {
+    iconName: "selenium",
+    text: "Selinium",
+    href: "https://www.selenium.dev/",
+  },
+  playwright: {
+    iconName: "playwright",
+    text: "Playwright",
+    href: "https://playwright.dev/",
+  },
 };
 
 export const sortedStack = (arr: (typeof t)[keyof typeof t][]) =>
@@ -269,6 +279,25 @@ export const sections = [
     live: "https://www.raycast.com/alex-popov-tech/lastpass",
     stack: sortedStack([t.react, t.raycast, t.nodejs]),
     herosrc: lastpassImage,
+  },
+  {
+    title: "Play Right",
+    description: [
+      "Play the right test- and user-oriented way with Playwright ;)",
+      "It is also a port of Selenide, Selene, NSelene, SelenideJS from selenium webdriver world.",
+    ].join(" "),
+    repo: "/automician/playright",
+    stack: sortedStack([t.nodejs, t.typescript, t.playwright]),
+    herosrc: noneImage,
+  },
+  {
+    title: "SelenideJS",
+    description: [
+      "Wrapper for Selenium WebDriver, which provides testing user-oriented API for writing stable and readable UI tests in JavaScript/TypeScript.",
+    ].join(" "),
+    repo: "/KnowledgeExpert/selenidejs",
+    stack: sortedStack([t.nodejs, t.typescript, t.selenium]),
+    herosrc: noneImage,
   },
 ];
 ---

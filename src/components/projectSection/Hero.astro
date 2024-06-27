@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 
 interface Props {
   herosrc: ImageMetadata;
-  live: string;
+  live?: string;
 }
 const { herosrc, live } = Astro.props;
 ---
