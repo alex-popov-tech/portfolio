@@ -5,6 +5,7 @@ import gopaytaxesImage from "./images/go-pay-taxes.png";
 import chatgptImage from "./images/chatgpt.png";
 import mayakImage from "./images/mayak.png";
 import lastpassImage from "./images/lastpass.png";
+import dreampicaiImage from "./images/dreampicai.png";
 
 export const t = {
   macos: {
@@ -162,12 +163,51 @@ export const t = {
     text: "Playwright",
     href: "https://playwright.dev/",
   },
+  templ: {
+    iconName: "templ",
+    text: "Templ",
+    href: "https://templ.guide/",
+  },
+  htmx: {
+    iconName: "htmx",
+    text: "HTMX",
+    href: "https://htmx.org/",
+  },
+  supabase: {
+    iconName: "supabase",
+    text: "Supabase",
+    href: "https://supabase.com",
+  },
+  jwt: {
+    iconName: "jwt",
+    text: "JWT",
+    href: "https://jwt.io",
+  },
 };
 
 export const sortedStack = (arr: (typeof t)[keyof typeof t][]) =>
   arr.sort((a, b) => a.text.localeCompare(b.text));
 
 export const sections = [
+  {
+    title: "DreampicAI",
+    description: [
+      "Heavily opinionated comprehensive collection of configuration files for various tools and applications you use on macOS.",
+      "It includes settings for wezterm, zsh, nvim, and several others like tmux, htop, and btop.",
+      "It also features a Brewfile for managing macOS packages via Homebrew.",
+    ].join(" "),
+    repo: "/alex-popov-tech/dreampicai",
+    live: "https://dreampicai.sashapopov.com",
+    herosrc: dreampicaiImage,
+    stack: sortedStack([
+      t.golang,
+      t.templ,
+      t.htmx,
+      t.supabase,
+      t.jwt,
+      t.github,
+    ]),
+  },
   {
     title: ".dotfiles",
     description: [
