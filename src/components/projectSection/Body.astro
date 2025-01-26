@@ -7,7 +7,7 @@ interface Props {
   herosrc: ImageMetadata;
   repo: string;
   live?: string;
-  description: string;
+  description: string[];
   stack: {
     iconName: string;
     text: string;
@@ -23,7 +23,9 @@ const { herosrc, repo, live, description, stack } = Astro.props;
 <div class="container">
   <Hero herosrc={herosrc} live={live} />
   <div class="information">
-    <p class="description">{description}</p>
+    <div>
+      {description.map((it) => <p class="description">{it}</p>)}
+    </div>
     <div class={stack.length < 4 ? "stack-small" : "stack"}>
       {
         stack.map((it) => (
@@ -87,6 +89,7 @@ const { herosrc, repo, live, description, stack } = Astro.props;
   .description {
     color: #fff;
 
+    text-indent: 1rem;
     text-align: justify;
     font-size: 1.75rem;
     line-height: 2rem;
