@@ -2,9 +2,10 @@
 import Tool from "./Tool.astro";
 import GithubButton from "./GithubButton.astro";
 import Hero from "./Hero.astro";
+import type { HeroMedia } from "../../types";
 
 interface Props {
-  herosrc: ImageMetadata;
+  herosrc: HeroMedia;
   repo: string;
   live?: string;
   description: string[];

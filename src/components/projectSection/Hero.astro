@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
+import type { HeroMedia } from "../../types";
 
 interface Props {
-  herosrc: ImageMetadata;
+  herosrc: HeroMedia;
   live?: string;
 }
 const { herosrc, live } = Astro.props;
@@ -10,7 +11,18 @@ const { herosrc, live } = Astro.props;
 
 <div class="hero">
   <a href={live}>
-    <Image src={herosrc} alt="Project Scheenshot" width="1980" height="1080" />
+    {herosrc.type === 'image' ? (
+      <Image src={herosrc.src} alt="Project Screenshot" width="1980" height="1080" />
+    ) : (
+      <video 
+        src={herosrc.src} 
+        poster={herosrc.poster ? herosrc.poster.src : undefined}
+        autoplay 
+        muted 
+        loop 
+        playsinline
+      />
+    )}
   </a>
 </div>
 
@@ -26,7 +38,7 @@ const { herosrc, live } = Astro.props;
     display: grid;
     place-items: center;
   }
-  img {
+  img, video {
     width: 100%;
     height: auto;
     border-radius: 1rem;

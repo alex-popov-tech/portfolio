@@ -1,10 +1,11 @@
 ---
 import Title from "./Title.astro";
 import Body from "./Body.astro";
+import type { HeroMedia } from "../../types";
 
 interface Props {
   title: string;
-  herosrc: ImageMetadata;
+  herosrc: HeroMedia;
   repo: string;
   live?: string;
   side: "left" | "right";

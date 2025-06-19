@@ -195,6 +195,22 @@ export const sortedStack = (arr: (typeof t)[keyof typeof t][]) =>
 
 export const sections = [
   {
+    title: "Advent of Code 2024",
+    description: [
+      "Advent of Code is an Advent calendar of small programming puzzles for a variety of skill levels that can be solved in any programming language you like. People use them as interview prep, company training, university coursework, practice problems, a speed contest, or to challenge each other.",
+      "You don't need a computer science background to participate - just a little programming knowledge and some problem solving skills will get you pretty far. Nor do you need a fancy computer; every problem has a solution that completes in at most 15 seconds on ten-year-old hardware.",
+    ],
+    repo: "/alex-popov-tech/advent_of_code_2024_golang",
+    herosrc: {
+      type: 'video' as const,
+      src: "/videos/aoc2024.mp4"
+    },
+    stack: sortedStack([
+      t.golang,
+      t.github,
+    ]),
+  },
+  {
     title: "DreampicAI",
     description: [
       "Image generation hub that leverages multiple AI models which streamlines the complex process of AI image generation by providing a simple interface for model selection and prompt input.",
@@ -202,7 +218,10 @@ export const sections = [
     ],
     repo: "/alex-popov-tech/dreampicai",
     live: "https://dreampicai.oleksandrp.com",
-    herosrc: dreampicaiImage,
+    herosrc: {
+      type: 'image' as const,
+      src: dreampicaiImage
+    },
     stack: sortedStack([
       t.golang,
       t.templ,
@@ -221,7 +240,10 @@ export const sections = [
     ],
     repo: "/alex-popov-tech/.dotfiles",
     live: "https://dotfiles.oleksandrp.com",
-    herosrc: dotfilesImage,
+    herosrc: {
+      type: 'image' as const,
+      src: dotfilesImage
+    },
     stack: sortedStack([
       t.macos,
       t.homebrew,
@@ -241,7 +263,10 @@ export const sections = [
     ],
     repo: "/alex-popov-tech/t3_chatgpt",
     live: "https://t3-chatgpt.oleksandrp.com/",
-    herosrc: chatgptImage,
+    herosrc: {
+      type: 'image' as const,
+      src: chatgptImage
+    },
     stack: sortedStack([
       t.t3,
       t.typescript,
@@ -279,7 +304,10 @@ export const sections = [
       t.nextjs,
       t["tanstack-query"],
     ]),
-    herosrc: mayakImage,
+    herosrc: {
+      type: 'image' as const,
+      src: mayakImage
+    },
   },
   {
     title: "Go pay taxes!",
@@ -291,7 +319,10 @@ export const sections = [
     repo: "/alex-popov-tech/go_pay_taxes_web",
     live: "https://alex-popov-tech.github.io/go_pay_taxes_web/",
     stack: [t.react, t.tailwindcss, t.githubpages, t.typescript, t.vite],
-    herosrc: gopaytaxesImage,
+    herosrc: {
+      type: 'image' as const,
+      src: gopaytaxesImage
+    },
   },
   {
     title: "Rock Paper Scissors",
@@ -309,7 +340,10 @@ export const sections = [
       t.postgresql,
       t.prisma,
     ]),
-    herosrc: noneImage,
+    herosrc: {
+      type: 'image' as const,
+      src: noneImage
+    },
   },
   {
     title: "Lastpass for Raycast",
@@ -321,7 +355,10 @@ export const sections = [
     repo: "/alex-popov-tech/extensions/tree/main/extensions/lastpass",
     live: "https://www.raycast.com/alex-popov-tech/lastpass",
     stack: sortedStack([t.react, t.raycast, t.nodejs]),
-    herosrc: lastpassImage,
+    herosrc: {
+      type: 'image' as const,
+      src: lastpassImage
+    },
   },
   {
     title: "Play Right",
@@ -331,7 +368,10 @@ export const sections = [
     ],
     repo: "/automician/playright",
     stack: sortedStack([t.nodejs, t.typescript, t.playwright]),
-    herosrc: noneImage,
+    herosrc: {
+      type: 'image' as const,
+      src: noneImage
+    },
   },
   {
     title: "SelenideJS",
@@ -340,7 +380,10 @@ export const sections = [
     ],
     repo: "/KnowledgeExpert/selenidejs",
     stack: sortedStack([t.nodejs, t.typescript, t.selenium]),
-    herosrc: noneImage,
+    herosrc: {
+      type: 'image' as const,
+      src: noneImage
+    },
   },
 ];
 ---
