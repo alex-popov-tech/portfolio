@@ -6,6 +6,7 @@ import chatgptImage from "./images/chatgpt.png";
 import mayakImage from "./images/mayak.png";
 import lastpassImage from "./images/lastpass.png";
 import dreampicaiImage from "./images/dreampicai.png";
+import storeNvimImage from "./images/store.nvim.png";
 
 export const t = {
   macos: {
@@ -194,6 +195,23 @@ export const sortedStack = (arr: (typeof t)[keyof typeof t][]) =>
   arr.sort((a, b) => a.text.localeCompare(b.text));
 
 export const sections = [
+  {
+    title: "store.nvim",
+    description: [
+      "Store.nvim is a Neovim plugin that provides an intuitive modal interface for browsing and discovering awesome Neovim plugins.",
+      "It features a clean UI that allow users to explore plugins interactively. The plugin includes live README preview with markdown rendering and syntax highlighting, smart filtering capabilities for searching plugins by name, and other cool stuff :)",
+    ],
+    repo: "/alex-popov-tech/store.nvim",
+    herosrc: {
+      type: 'image' as const,
+      src: storeNvimImage
+    },
+    stack: sortedStack([
+      t.github,
+      t.lua,
+      t.neovim,
+    ]),
+  },
   {
     title: "Advent of Code 2024",
     description: [
