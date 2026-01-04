@@ -7,6 +7,8 @@ import mayakImage from "./images/mayak.png";
 import lastpassImage from "./images/lastpass.png";
 import dreampicaiImage from "./images/dreampicai.png";
 import storeNvimImage from "./images/store.nvim.png";
+import betterDtekImage from "./images/better-dtek.png";
+import claudeRioImage from "./images/claude-rio.png";
 
 export const t = {
   macos: {
@@ -179,6 +181,11 @@ export const t = {
     text: "Supabase",
     href: "https://supabase.com",
   },
+  svelte: {
+    iconName: "svelte",
+    text: "SvelteKit",
+    href: "https://svelte.dev/",
+  },
   jwt: {
     iconName: "jwt",
     text: "JWT",
@@ -195,6 +202,45 @@ export const sortedStack = (arr: (typeof t)[keyof typeof t][]) =>
   arr.sort((a, b) => a.text.localeCompare(b.text));
 
 export const sections = [
+  {
+    title: "Better DTEK",
+    description: [
+      "Real-time web application for tracking power outages in Ukraine across DTEK regions.",
+      "Features visual traffic light status indicators, multi-address tracking with custom labels, and hourly schedules for planned outages. Emergency alerts are distinguished with pulsing indicators.",
+    ],
+    repo: "/alex-popov-tech/better-dtek",
+    live: "https://dtek-theta.vercel.app",
+    herosrc: {
+      type: 'image' as const,
+      src: betterDtekImage
+    },
+    stack: sortedStack([
+      t.svelte,
+      t.typescript,
+      t.tailwindcss,
+      t.vite,
+      t.playwright,
+      t.redis,
+      t.vercel,
+    ]),
+  },
+  {
+    title: "Claude Rio",
+    description: [
+      "Deterministic matcher system for Claude Code that improves activation of skills, agents, and commands through explicit keyword-based matching.",
+      "Lightweight architecture with no external dependencies, featuring shell preprocessing in 10-20ms and cross-platform support for macOS, Linux, and Windows.",
+    ],
+    repo: "/alex-popov-tech/claude-rio",
+    herosrc: {
+      type: 'image' as const,
+      src: claudeRioImage
+    },
+    stack: sortedStack([
+      t.nodejs,
+      t.javascript,
+      t.github,
+    ]),
+  },
   {
     title: "store.nvim",
     description: [
