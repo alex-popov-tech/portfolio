@@ -9,6 +9,7 @@ import dreampicaiImage from "./images/dreampicai.png";
 import storeNvimImage from "./images/store.nvim.png";
 import betterDtekImage from "./images/better-dtek.png";
 import claudeRioImage from "./images/claude-rio.png";
+import goInterpreterImage from "./images/go-interpreter.png";
 
 export const t = {
   macos: {
@@ -202,6 +203,22 @@ export const sortedStack = (arr: (typeof t)[keyof typeof t][]) =>
   arr.sort((a, b) => a.text.localeCompare(b.text));
 
 export const sections = [
+  {
+    title: "Go Interpreter",
+    description: [
+      "Interpreter for the Monkey programming language, built in Go following 'Writing An Interpreter In Go' by Thorsten Ball.",
+      "Features a lexer, parser, AST representation, and tree-walking evaluator supporting let/return statements, closures, integers, booleans, strings, arrays, and hash maps.",
+    ],
+    repo: "/alex-popov-tech/go-interpreter",
+    herosrc: {
+      type: 'image' as const,
+      src: goInterpreterImage
+    },
+    stack: sortedStack([
+      t.golang,
+      t.github,
+    ]),
+  },
   {
     title: "Better DTEK",
     description: [
