@@ -10,6 +10,7 @@ import storeNvimImage from "./images/store.nvim.png";
 import betterDtekImage from "./images/better-dtek.png";
 import claudeRioImage from "./images/claude-rio.png";
 import goInterpreterImage from "./images/go-interpreter.png";
+import acapulkoImage from "./images/acapulko.png";
 
 export const t = {
   macos: {
@@ -197,12 +198,52 @@ export const t = {
     text: "Replicate",
     href: "https://replicate.com",
   },
+  homeassistant: {
+    iconName: "home-assistant",
+    text: "Home Assistant",
+    href: "https://www.home-assistant.io/",
+  },
+  telegram: {
+    iconName: "telegram",
+    text: "Telegram",
+    href: "https://telegram.org/",
+  },
+  raspberrypi: {
+    iconName: "raspberrypi",
+    text: "Raspberry Pi",
+    href: "https://www.raspberrypi.com/",
+  },
+  docker: {
+    iconName: "docker",
+    text: "Docker",
+    href: "https://www.docker.com/",
+  },
 };
 
 export const sortedStack = (arr: (typeof t)[keyof typeof t][]) =>
   arr.sort((a, b) => a.text.localeCompare(b.text));
 
 export const sections = [
+  {
+    title: "Acapulko",
+    description: [
+      "Self-hosted power outage tracker for a single Ukrainian address, built to survive the war-driven blackouts. Combines live grid sensor data from Home Assistant with emergency outage announcements from the DTEK utility API.",
+      "Pushes Telegram alerts when power flips or DTEK announces an outage, and serves a live PWA dashboard via Server-Sent Events. Runs on a Raspberry Pi 5, packaged as both a standalone binary and a Home Assistant add-on.",
+    ],
+    repo: "/alex-popov-tech/acapulko",
+    live: "https://acapulko.oleksandrp.com/",
+    herosrc: {
+      type: 'image' as const,
+      src: acapulkoImage
+    },
+    stack: sortedStack([
+      t.golang,
+      t.homeassistant,
+      t.telegram,
+      t.raspberrypi,
+      t.docker,
+    ]),
+  },
   {
     title: "Go Interpreter",
     description: [
