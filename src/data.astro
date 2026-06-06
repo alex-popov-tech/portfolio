@@ -11,6 +11,8 @@ import betterDtekImage from "./images/better-dtek.png";
 import claudeRioImage from "./images/claude-rio.png";
 import goInterpreterImage from "./images/go-interpreter.png";
 import acapulkoImage from "./images/acapulko.png";
+import redisGoImage from "./images/redis-go.png";
+import dnsGoImage from "./images/dns-go.png";
 
 export const t = {
   macos: {
@@ -254,6 +256,39 @@ export const sections = [
     herosrc: {
       type: 'image' as const,
       src: goInterpreterImage
+    },
+    stack: sortedStack([
+      t.golang,
+      t.github,
+    ]),
+  },
+  {
+    title: "Redis Server",
+    description: [
+      "A Redis-compatible server built from scratch in Go, speaking the real RESP wire protocol over TCP — you can talk to it with redis-cli. Concurrent clients are handled with a goroutine-per-connection model over a thread-safe keyspace.",
+      "Implements strings with expiry, streams (XADD/XRANGE/XREAD), transactions (MULTI/EXEC/DISCARD), optimistic locking (WATCH), and full leader-follower replication with command propagation and WAIT. Built through the CodeCrafters challenge — base stages plus the Streams, Transactions, Optimistic Locking, and Replication extensions.",
+    ],
+    repo: "/alex-popov-tech/redis-go",
+    herosrc: {
+      type: 'image' as const,
+      src: redisGoImage
+    },
+    stack: sortedStack([
+      t.golang,
+      t.redis,
+      t.github,
+    ]),
+  },
+  {
+    title: "DNS Server",
+    description: [
+      "A DNS server built from scratch in Go with no DNS libraries — it parses and serializes raw DNS packets byte by byte, across the header, question, and answer sections.",
+      "Handles DNS name compression (pointer labels), bit-packed header flags, and recursive forwarding to an upstream resolver. Completed end-to-end as the CodeCrafters 'Build Your Own DNS server' challenge.",
+    ],
+    repo: "/alex-popov-tech/dns-go",
+    herosrc: {
+      type: 'image' as const,
+      src: dnsGoImage
     },
     stack: sortedStack([
       t.golang,
