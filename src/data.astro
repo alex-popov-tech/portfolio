@@ -13,6 +13,7 @@ import goInterpreterImage from "./images/go-interpreter.png";
 import acapulkoImage from "./images/acapulko.png";
 import redisGoImage from "./images/redis-go.png";
 import dnsGoImage from "./images/dns-go.png";
+import gitGoImage from "./images/git-go.png";
 
 export const t = {
   macos: {
@@ -292,6 +293,23 @@ export const sections = [
     },
     stack: sortedStack([
       t.golang,
+      t.github,
+    ]),
+  },
+  {
+    title: "Git",
+    description: [
+      "A Git implementation built from scratch in Go with no Git libraries — it reads and writes the real .git object store by hand (blobs, trees, commits), content-addressed with SHA-1 and zlib-compressed, byte-for-byte compatible with real git.",
+      "Implements the plumbing (init, hash-object, cat-file, ls-tree, write-tree, commit-tree) and a full clone of public repositories over the Smart HTTP protocol — pkt-line framing, packfile parsing, and ref-delta resolution including delta chains, then checkout. Built end-to-end as the CodeCrafters 'Build Your Own Git' challenge.",
+    ],
+    repo: "/alex-popov-tech/git-go",
+    herosrc: {
+      type: 'image' as const,
+      src: gitGoImage
+    },
+    stack: sortedStack([
+      t.golang,
+      t.git,
       t.github,
     ]),
   },
